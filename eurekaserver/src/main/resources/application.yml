@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: eurekaserver
+
+server:
+  port: 8761
+
+eureka:
+  client:
+    #Evita que este servicio se registre a sí mesmo no Eureka
+    register-with-eureka: false
+    #Evita que este serviço busque outros serviços no Eureka, já que quem é responsável por isso é o getaway
+    fetch-registry: false
