@@ -10,6 +10,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.net.URI;
 import java.util.Optional;
+import java.util.logging.Logger;
 
 @RestController
 @RequestMapping("/clients")
@@ -18,8 +19,12 @@ public class ClientController {
     @Autowired
     public ClientService service;
 
+    @Autowired
+    private static Logger logger = Logger.getLogger(ClientController.class.getName());
+
 //    @GetMapping
 //    public String status(){
+//        logger.info("Obtendo o status do msclientes");
 //        return "ok";
 //    }
 
