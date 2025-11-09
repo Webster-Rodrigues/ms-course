@@ -20,6 +20,8 @@ public class MscloudgatewayApplication {
 		//Define as rotas do gateway. Os acesso a /clients/** serão redirecionados para o msclientes
 		return builder.routes()
 				.route(r-> r.path("/clients/**").uri("lb://msclientes"))
+				.route(r-> r.path("/cards/**").uri("lb://mscartoes"))
+				.route(r-> r.path("/credit-appraiser/**").uri("lb://msavaliadorcredito"))
 				.build();
 	}
 }
