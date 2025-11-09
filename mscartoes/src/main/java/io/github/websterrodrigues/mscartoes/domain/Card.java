@@ -25,8 +25,7 @@ public class Card {
 
     }
 
-    public Card(UUID id, String name, CardNetwork cardNetwork, BigDecimal income, BigDecimal limit) {
-        this.id = id;
+    public Card(String name, CardNetwork cardNetwork, BigDecimal income, BigDecimal limit) {
         this.name = name;
         this.cardNetwork = cardNetwork;
         this.income = income;

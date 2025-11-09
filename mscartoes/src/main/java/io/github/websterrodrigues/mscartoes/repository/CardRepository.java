@@ -5,5 +5,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.UUID;
 
-public class CardRepository extends JpaRepository<Card, UUID> {
+public interface CardRepository extends JpaRepository<Card, UUID> {
 }
