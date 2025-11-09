@@ -1,35 +1,36 @@
 package io.github.websterrodrigues.mscartoes.domain;
 
 import io.github.websterrodrigues.mscartoes.domain.enuns.CardNetwork;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.math.BigDecimal;
 import java.util.Objects;
 import java.util.UUID;
 
 @Entity
+@Table(name = "card")
 public class Card {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
     private String name;
+
+    @Enumerated(EnumType.STRING)
     private CardNetwork cardNetwork;
+
     private BigDecimal income;
-    private BigDecimal limit;
+    private BigDecimal creditLimit;
 
     public Card(){
 
     }
 
-    public Card(String name, CardNetwork cardNetwork, BigDecimal income, BigDecimal limit) {
+    public Card(String name, CardNetwork cardNetwork, BigDecimal income, BigDecimal creditLimit) {
         this.name = name;
         this.cardNetwork = cardNetwork;
         this.income = income;
-        this.limit = limit;
+        this.creditLimit = creditLimit;
     }
 
     public UUID getId() {
@@ -64,12 +65,12 @@ public class Card {
         this.income = income;
     }
 
-    public BigDecimal getLimit() {
-        return limit;
+    public BigDecimal getCreditLimit() {
+        return creditLimit;
     }
 
-    public void setLimit(BigDecimal limit) {
-        this.limit = limit;
+    public void setCreditLimit(BigDecimal creditLimit) {
+        this.creditLimit = creditLimit;
     }
 
     @Override
@@ -91,7 +92,7 @@ public class Card {
                 ", name='" + name + '\'' +
                 ", cardNetwork=" + cardNetwork +
                 ", income=" + income +
-                ", limit=" + limit +
+                ", creditLimit=" + creditLimit +
                 '}';
     }
 }
