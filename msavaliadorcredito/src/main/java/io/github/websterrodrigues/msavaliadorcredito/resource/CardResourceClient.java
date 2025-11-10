@@ -1,5 +1,6 @@
 package io.github.websterrodrigues.msavaliadorcredito.resource;
 
+import io.github.websterrodrigues.msavaliadorcredito.model.Card;
 import io.github.websterrodrigues.msavaliadorcredito.model.ClientCard;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.ResponseEntity;
@@ -13,4 +14,7 @@ public interface CardResourceClient {
 
     @GetMapping(params = "cpf")
     ResponseEntity<List<ClientCard>> getCardsByClient(@RequestParam String cpf);
+
+    @GetMapping(params = "income")
+    public ResponseEntity<List<Card>> getCardsLimitLessEqual(@RequestParam Long income);
 }

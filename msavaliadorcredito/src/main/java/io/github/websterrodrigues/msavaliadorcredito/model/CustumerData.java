@@ -6,6 +6,7 @@ public class CustumerData {
 
     private UUID id;
     private String name;
+    private Long age;
 
     public UUID getId() {
         return id;
@@ -21,5 +22,13 @@ public class CustumerData {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Long getAge() {
+        return age;
+    }
+
+    public void setAge(Long age) {
+        this.age = age;
     }
 }
