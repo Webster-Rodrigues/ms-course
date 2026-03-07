@@ -10,25 +10,22 @@ public class ClientCardDTO {
     private String name;
     private String cardNetwork;
     private BigDecimal limitReleased;
-    private BigDecimal income;
 
     public ClientCardDTO(){
 
     }
 
-    public ClientCardDTO(String name, String cardNetwork, BigDecimal limitReleased, BigDecimal income) {
+    public ClientCardDTO(String name, String cardNetwork, BigDecimal limitReleased) {
         this.name = name;
         this.cardNetwork = cardNetwork;
         this.limitReleased = limitReleased;
-        this.income = income;
     }
 
     public static ClientCardDTO fromModel(ClientCard clientCard){
         return new ClientCardDTO(
                 clientCard.getCard().getName(),
                 clientCard.getCard().getCardNetwork().toString(),
-                clientCard.getCreditLimit(),
-                clientCard.getCard().getIncome());
+                clientCard.getCreditLimit());
     }
 
     public String getName() {

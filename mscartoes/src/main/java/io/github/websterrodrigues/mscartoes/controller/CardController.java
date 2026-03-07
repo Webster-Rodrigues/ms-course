@@ -37,7 +37,7 @@ public class CardController {
     }
 
     @GetMapping(params = "income")
-    public ResponseEntity getCardsLimitLessEqual(@RequestParam Long income){
+    public ResponseEntity<List<Card>> getCardsLimitLessEqual(@RequestParam Long income){
         List<Card> list = cardService.getCardsLimitLessEqual(income);
         return ResponseEntity.ok(list);
     }
