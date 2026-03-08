@@ -22,11 +22,11 @@ public class ClientController {
     @Autowired
     private static Logger logger = Logger.getLogger(ClientController.class.getName());
 
-//    @GetMapping
-//    public String status(){
-//        logger.info("Obtendo o status do msclientes");
-//        return "ok";
-//    }
+    @GetMapping("/status")
+    public String status(){
+        logger.info("Obtendo o status do msclientes");
+        return "ok";
+    }
 
     @PostMapping
     public ResponseEntity save(@RequestBody ClientDTO client){
