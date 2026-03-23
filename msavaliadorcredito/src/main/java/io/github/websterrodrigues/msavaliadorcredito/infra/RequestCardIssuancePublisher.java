@@ -8,12 +8,12 @@ import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.stereotype.Component;
 
 @Component
-public class RquestCardIssuancePublisher {
+public class RequestCardIssuancePublisher {
 
     private final RabbitTemplate rabbitTemplate;
     private Queue cardIssuanceQueue;
 
-    public RquestCardIssuancePublisher(RabbitTemplate rabbitTemplate, Queue cardIssuanceQueue) {
+    public RequestCardIssuancePublisher(RabbitTemplate rabbitTemplate, Queue cardIssuanceQueue) {
         this.rabbitTemplate = rabbitTemplate;
         this.cardIssuanceQueue = cardIssuanceQueue;
     }

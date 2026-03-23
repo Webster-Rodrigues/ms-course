@@ -1,6 +1,7 @@
 package io.github.websterrodrigues.msavaliadorcredito.service;
 
 import feign.FeignException;
+import io.github.websterrodrigues.msavaliadorcredito.infra.RequestCardIssuancePublisher;
 import io.github.websterrodrigues.msavaliadorcredito.model.*;
 import io.github.websterrodrigues.msavaliadorcredito.resource.CardResourceClient;
 import io.github.websterrodrigues.msavaliadorcredito.resource.ClientResourceClient;
@@ -11,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 import java.util.List;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 @Service
@@ -21,6 +23,9 @@ public class CreditAppraiserService {
 
     @Autowired
     private CardResourceClient cardResourceClient;
+
+    @Autowired
+    private RequestCardIssuancePublisher requestCardIssuancePublisher;
 
     public CustomerSituation getCustomerSituation(String cpf) {
 
@@ -83,5 +88,16 @@ public class CreditAppraiserService {
             throw new IllegalArgumentException("Erro ao obter dados do cliente");
         }
 
+    }
+
+    public ProtocolRequestCard requestCardIssuance(CardRequestData data){
+        try{
+            requestCardIssuancePublisher.requestCard(data);
+            String protocol = UUID.randomUUID().toString();
+            return new ProtocolRequestCard(protocol);
+
+        } catch (Exception e) {
+            throw new RuntimeException(e.getMessage());
+        }
     }
 }

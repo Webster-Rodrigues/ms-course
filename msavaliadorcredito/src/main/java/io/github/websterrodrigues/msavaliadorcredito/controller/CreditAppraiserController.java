@@ -1,8 +1,6 @@
 package io.github.websterrodrigues.msavaliadorcredito.controller;
 
-import io.github.websterrodrigues.msavaliadorcredito.model.CustomerSituation;
-import io.github.websterrodrigues.msavaliadorcredito.model.EvaluationData;
-import io.github.websterrodrigues.msavaliadorcredito.model.ReturnCustomerReview;
+import io.github.websterrodrigues.msavaliadorcredito.model.*;
 import io.github.websterrodrigues.msavaliadorcredito.service.CreditAppraiserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -44,6 +42,16 @@ public class CreditAppraiserController {
             return ResponseEntity.internalServerError().build();
         }
 
+    }
+
+    @PostMapping("solicitacoes-cartao")
+    public ResponseEntity requestCard(@RequestBody CardRequestData data){
+        try{
+            ProtocolRequestCard protocolRequestCard = creditAppraiser.requestCardIssuance(data);
+            return ResponseEntity.ok(protocolRequestCard);
+        } catch (Exception e) {
+            return ResponseEntity.internalServerError().body(e.getMessage());
+        }
     }
 
 
