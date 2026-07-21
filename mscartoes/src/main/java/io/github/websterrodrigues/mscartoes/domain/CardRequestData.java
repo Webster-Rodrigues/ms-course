@@ -1,4 +1,4 @@
-package io.github.websterrodrigues.msavaliadorcredito.model;
+package io.github.websterrodrigues.mscartoes.domain;
 
 import java.math.BigDecimal;
 import java.util.UUID;

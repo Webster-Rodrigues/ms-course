@@ -5,7 +5,7 @@ import java.math.BigDecimal;
 public class ClientCard {
 
     private String name;
-    private String brand;
+    private String cardNetwork;
     private BigDecimal limitReleased;
 
     public String getName() {
@@ -16,12 +16,12 @@ public class ClientCard {
         this.name = name;
     }
 
-    public String getBrand() {
-        return brand;
+    public String getCardNetwork() {
+        return cardNetwork;
     }
 
-    public void setBrand(String brand) {
-        this.brand = brand;
+    public void setCardNetwork(String cardNetwork) {
+        this.cardNetwork = cardNetwork;
     }
 
     public BigDecimal getLimitReleased() {

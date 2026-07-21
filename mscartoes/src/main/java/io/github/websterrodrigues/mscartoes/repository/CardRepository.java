@@ -9,4 +9,5 @@ import java.util.UUID;
 
 public interface CardRepository extends JpaRepository<Card, UUID> {
     List<Card> findByIncomeLessThanEqual(BigDecimal incomeBigDecimal);
+
 }

@@ -1,4 +1,4 @@
-package io.github.websterrodrigues.msavaliadorcredito.infra;
+package io.github.websterrodrigues.msavaliadorcredito.infra.rbmqueue;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;

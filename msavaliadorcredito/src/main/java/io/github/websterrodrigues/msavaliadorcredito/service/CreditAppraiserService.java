@@ -1,7 +1,7 @@
 package io.github.websterrodrigues.msavaliadorcredito.service;
 
 import feign.FeignException;
-import io.github.websterrodrigues.msavaliadorcredito.infra.RequestCardIssuancePublisher;
+import io.github.websterrodrigues.msavaliadorcredito.infra.rbmqueue.RequestCardIssuancePublisher;
 import io.github.websterrodrigues.msavaliadorcredito.model.*;
 import io.github.websterrodrigues.msavaliadorcredito.resource.CardResourceClient;
 import io.github.websterrodrigues.msavaliadorcredito.resource.ClientResourceClient;
